@@ -1,9 +1,5 @@
 package com.example.demo.application.dto;
 
-import com.example.demo.domain.entity.Author;
-import com.example.demo.domain.entity.Genre;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

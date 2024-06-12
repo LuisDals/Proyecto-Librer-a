@@ -1,10 +1,6 @@
 package com.example.demo.infraestructure.rest;
 
-import com.example.demo.application.dto.UserDto;
-import com.example.demo.application.service.AuthService;
-import com.example.demo.application.service.UserService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
