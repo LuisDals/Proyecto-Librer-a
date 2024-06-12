@@ -12,8 +12,8 @@ public class BookDto implements Serializable {
     private Long id;
     private String bookName;
     private byte[] image;
-    private Author author;
-    private Genre genre;
+    private String author;
+    private String genre;
     private String publicationDate;
     private BigDecimal rentPrice;
     private BigDecimal salePrice;
@@ -22,27 +22,6 @@ public class BookDto implements Serializable {
     public BookDto() {
     }
 
-    @JsonCreator
-    public BookDto(
-            @JsonProperty("id") Long id,
-            @JsonProperty("bookName") String bookName,
-            @JsonProperty("image") byte[] image,
-            @JsonProperty("author") String authorName,
-            @JsonProperty("genre") String genreName,
-            @JsonProperty("publicationDate") String publicationDate,
-            @JsonProperty("rentPrice") BigDecimal rentPrice,
-            @JsonProperty("salePrice") BigDecimal salePrice,
-            @JsonProperty("available") boolean available) {
-        this.id = id;
-        this.bookName = bookName;
-        this.image = image;
-        this.author = new Author(authorName);
-        this.genre = new Genre(genreName);
-        this.publicationDate = publicationDate;
-        this.rentPrice = rentPrice;
-        this.salePrice = salePrice;
-        this.available = available;
-    }
 
     public Long getId() {
         return id;
@@ -68,19 +47,19 @@ public class BookDto implements Serializable {
         this.image = image;
     }
 
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public Genre getGenre() {
+    public String getGenre() {
         return genre;
     }
 
-    public void setGenre(Genre genre) {
+    public void setGenre(String genre) {
         this.genre = genre;
     }
 

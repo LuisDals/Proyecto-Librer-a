@@ -16,12 +16,10 @@ public class Book {
     private String bookName;
     @Lob
     private byte[] image;
-    @ManyToOne
-    @JoinColumn(name = "author_id", nullable = false)
-    private Author author;
-    @ManyToOne
-    @JoinColumn(name = "genre_id", nullable = false)
-    private Genre genre;
+    @Column(name = "author")
+    private String author;
+    @Column(name = "genre")
+    private String genre;
     @Column(name = "date_of_publication")
     private String publicationDate;
     @Column(name = "rent_price")
@@ -52,19 +50,19 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public Genre getGenre() {
+    public String getGenre() {
         return genre;
     }
 
-    public void setGenre(Genre genre) {
+    public void setGenre(String genre) {
         this.genre = genre;
     }
 

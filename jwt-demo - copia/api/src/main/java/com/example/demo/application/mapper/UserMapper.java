@@ -7,7 +7,7 @@ import org.mapstruct.ReportingPolicy;
 
 @Mapper(
         componentModel = "spring",
-        uses = {GenreMapper.class, AuthorMapper.class, BookRegisterMapper.class},
+        uses = { BookRegisterMapper.class},
         unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public interface UserMapper extends EntityMapper<UserDto, User> {

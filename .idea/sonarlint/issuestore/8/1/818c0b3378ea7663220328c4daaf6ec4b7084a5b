@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 œ
 java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂJ$7619fa93-fb0e-4da1-9cd8-c97bdbad8abe
 h
@@ -10,3 +11,16 @@ v	java:S1256"<This block of commented-out lines of code should be removed.(ø«œ
 java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$16bfa51f-8b4f-4a0c-893b-309257edf6e3
 p
 java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”J$534ebcf1-d06e-405d-8cb1-6c1ea215be95
+=======
+v
+java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂ
+B
+java:S1905-"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿ
+@
+java:S1905/"*Remove this unnecessary cast to "UserDto".(øö¶
+P	java:S1256"<This block of commented-out lines of code should be removed.(ø«œ+
+
+java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹
+J
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”
+>>>>>>> Stashed changes
