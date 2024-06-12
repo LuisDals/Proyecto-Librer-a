@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let song of songList">
+            <div class="card mb-4">
+                <img [src]="'data:image/jpeg;base64,' + song.image" class="card-img-top" alt="Song Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ song.songName }}</h5>
+                    <hr>
+                    <p class="card-text">Album: {{ song.album }}</p>
+                    <p class="card-text">Artist: {{ song.artist }}</p>
+                    <p class="card-text">Style: {{ song.style }}</p>
+                    <p class="card-text">Duration: {{ song.duration }}</p>
+                    <a [routerLink]="['/songDetail/' + song.songName]" class="btn btn-primary">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

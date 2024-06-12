@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container justify-content-center"> 
+        <div class="navbar-text mr-auto" *ngIf="Token()">
+            <h1>Welcome {{user?.username}}</h1>
+        </div>
+        <div class="navbar-text mx-auto">
+            <h1 [routerLink]="['/homepage']">GrooveGarden</h1>
+        </div>
+        <div class="navbar-text ml-auto" *ngIf="Token()">
+            <p class="mr-2">{{user?.firstName}} {{user?.lastName}}</p> 
+        </div>
+        <button class="btn btn-outline-success my-2 my-sm-0 ml-auto" type="button" *ngIf="!Token()" (click)="goToLogin()">Login</button>
+        <button class="btn btn-outline-danger my-2 my-sm-0 ml-auto" type="button" *ngIf="Token()" (click)="logout()">Logout</button>
+    </div>
+</nav>
+
+
+
+ 

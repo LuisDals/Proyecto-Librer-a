@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center align-items-center">
+    <div class="star" *ngFor="let star of generateRange()" (click)="rate(star)">
+      <i class="fa fa-star" [ngClass]="{'filled': star <= stars}" aria-hidden="true"></i>
+    </div>
+</div>

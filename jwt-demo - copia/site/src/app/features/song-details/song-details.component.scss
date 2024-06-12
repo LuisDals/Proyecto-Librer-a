@@ -1,0 +1,39 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+.card {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .card-body {
+    padding: 20px;
+    width: 20%;
+  }
+  
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .btn-play {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    background-color: black;
+  }
+  
+  .btn-play i {
+    font-size: 14px; 
+    color: white; 
+  }
+
+  .star-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinear las estrellas verticalmente */
+  }
+  
+  .star-rating .star {
+    margin-right: 5px; /* Espacio entre las estrellas */
+  }

@@ -1,0 +1,39 @@
+<!-- <div class="card bg-dark text-white">
+    <img src="img" class="img" [src]="'data:image/jpeg;base64,' + songDetail?.image">
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{ songDetail?.songName }}</h5>
+      <p class="card-text">Style: {{ songDetail?.style }}</p>
+      <p class="card-text">Artist: {{ songDetail?.artist }}</p>
+      <p class="card-text">Album: {{ songDetail?.album }}</p>
+      <p class="card-text">Duration: {{ songDetail?.duration }}</p>
+      <p>{{ songDetail?.rating }}</p>
+      <div class="star-rating">
+        <app-star-rating [stars]="songDetail?.rating || 0" [maxRating]="4" (ratingSelected)="rateSong($event)"></app-star-rating>
+      </div>
+      <button class="btn btn-primary btn-play" (click)="playSong()">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+</div> -->
+
+<div class="card bg-dark text-white">
+  <img src="img" class="img" [src]="'data:image/jpeg;base64,' + songDetail?.image">
+  <div class="card-img-overlay d-flex flex-column justify-content-end">
+    <div>
+      <h5 class="card-title">{{ songDetail?.songName }}</h5>
+      <p class="card-text">Style: {{ songDetail?.style }}</p>
+      <p class="card-text">Artist: {{ songDetail?.artist }}</p>
+      <p class="card-text">Album: {{ songDetail?.album }}</p>
+      <p class="card-text">Duration: {{ songDetail?.duration }}</p>
+      <p>{{ songDetail?.rating }}</p>
+    </div>
+    <div class="d-flex justify-content-between align-items-end">
+      <div class="star-rating">
+        <app-star-rating [stars]="songDetail?.rating || 0" [maxRating]="4" (ratingSelected)="rateSong($event)"></app-star-rating>
+      </div>
+      <button class="btn btn-primary btn-play" (click)="playSong()">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+  </div>
+</div>
