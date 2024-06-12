@@ -1,0 +1,8 @@
+
+s
+java:S1128	"XRemove this unused import 'com.example.demo.infraestructure.persistence.BookRepository'.(íÒ£…ûÿÿÿÿ
+v
+java:S1128
+"[Remove this unused import 'com.example.demo.infraestructure.persistence.UserJpaRepository'.(³û×Îüÿÿÿÿ
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ
