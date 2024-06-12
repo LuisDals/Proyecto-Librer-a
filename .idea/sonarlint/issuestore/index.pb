@@ -51,3 +51,13 @@ djwt-demo - copia/api/src/main/java/com/example/demo/infraestructure/rest/BookRe
 \jwt-demo - copia/api/src/main/java/com/example/demo/infraestructure/rest/UserController.java,b\1\b15e24371256069b7d78750c628b89d03faaba3c
 †
 Vjwt-demo - copia/api/src/main/java/com/example/demo/application/mapper/UserMapper.java,8\6\86f0ad333d40f2afbb64de628536b3b2092c1149
+‡
+Wjwt-demo - copia/api/src/main/java/com/example/demo/application/dto/RentRequestDto.java,1\0\10971eea7aaa9fd2e8802904f3fa2030c1a5ffe6
+š
+jjwt-demo - copia/api/src/main/java/com/example/demo/application/service/impl/RentalRequestServiceImpl.java,a\d\ad1c99054d94838532afad7ba98664a67f2d02eb
+‘
+ajwt-demo - copia/api/src/main/java/com/example/demo/application/service/impl/UserServiceImpl.java,8\1\818c0b3378ea7663220328c4daaf6ec4b7084a5b
+•
+ejwt-demo - copia/api/src/main/java/com/example/demo/infraestructure/rest/RentalRequestController.java,e\6\e62d23145d77f240192570058b463ad7901b62b4
+~
+Njwt-demo - copia/api/src/main/java/com/example/demo/config/SecurityConfig.java,a\1\a1642d88bb70648b53434e36d654e75d54927cc5

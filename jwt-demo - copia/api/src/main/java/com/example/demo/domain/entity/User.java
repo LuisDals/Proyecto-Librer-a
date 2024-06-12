@@ -22,7 +22,16 @@ public class User {
     private Role role;
     @OneToMany(mappedBy = "user")
     private List<BookRegister> registers;
+    @Column(name = "total_rental_days")
+    private int totalRentalDays;
 
+    public int getTotalRentalDays() {
+        return totalRentalDays;
+    }
+
+    public void setTotalRentalDays(int totalRentalDays) {
+        this.totalRentalDays = totalRentalDays;
+    }
 
     public String getUsername() {
         return username;

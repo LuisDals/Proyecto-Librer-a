@@ -1,26 +1,12 @@
 
-<<<<<<< Updated upstream
 œ
-java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂJ$7619fa93-fb0e-4da1-9cd8-c97bdbad8abe
+java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂJ$b9e6a0da-c3df-4c7a-b24e-8ce91b9263cf
 h
-java:S1905-"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿJ$fe5ae9c6-a81d-4465-8f59-7fba281783d0
+java:S1905-"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿJ$37de9662-9946-4061-882a-ad7f0d5ed004
 f
-java:S1905/"*Remove this unnecessary cast to "UserDto".(øö¶ŽJ$1e7d469c-0f06-4619-9511-e7b7c4e69372
-v	java:S1256"<This block of commented-out lines of code should be removed.(ø«œ+J$d89f1442-eb92-4e11-abb8-e20300ea8484
+java:S1905/"*Remove this unnecessary cast to "UserDto".(øö¶ŽJ$7aa5e10a-f77d-4838-b6be-4bf827aea696
+v	java:S1256"<This block of commented-out lines of code should be removed.(ø«œ+J$a414cd88-812a-445f-9ab5-9b34ed867f45
 ¶
-java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$16bfa51f-8b4f-4a0c-893b-309257edf6e3
+java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$3cb87e73-05d4-4249-a7d2-3b95626aebd5
 p
-java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷Ž”J$534ebcf1-d06e-405d-8cb1-6c1ea215be95
-=======
-v
-java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂ
-B
-java:S1905-"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿ
-@
-java:S1905/"*Remove this unnecessary cast to "UserDto".(øö¶Ž
-P	java:S1256"<This block of commented-out lines of code should be removed.(ø«œ+
-
-java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹
-J
-java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷Ž”
->>>>>>> Stashed changes
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷Ž”J$81b6f4ed-42ce-40c7-84d4-bbb009a516ea

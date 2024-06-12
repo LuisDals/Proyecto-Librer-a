@@ -11,18 +11,27 @@ public class UserDto implements Serializable {
     private String lastName;
     private String email;
     protected Role role;
+    private Integer totalRentalDays;
 
     public UserDto() {
     }
 
-    public UserDto(String username, String password, String firstName, String lastName, String email/*, List<SongDto> songs*/) {
+    public UserDto(String username, String password, String firstName, String lastName, String email, Integer totalRentalDys) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.totalRentalDays = totalRentalDys;
     }
 
+    public Integer getTotalRentalDays() {
+        return totalRentalDays;
+    }
+
+    public void setTotalRentalDays(Integer totalRentalDays) {
+        this.totalRentalDays = totalRentalDays;
+    }
 
     public String getUsername() {
         return username;
