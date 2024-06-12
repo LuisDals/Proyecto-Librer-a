@@ -14,6 +14,9 @@ import { HomepageComponent } from './features/homepage/homepage.component';
 import { SongListComponent } from './features/song-list/song-list.component';
 import { SongDetailsComponent } from './features/song-details/song-details.component';
 import { StarRatingComponent } from './features/song-details/star-rating/star-rating.component';
+import { BookListComponent } from './features/book-list/book-list.component';
+import { BookDetailsComponent } from './features/book-details/book-details.component';
+import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { StarRatingComponent } from './features/song-details/star-rating/star-ra
     SongListComponent,
     SongDetailsComponent,
     StarRatingComponent,
+    BookListComponent,
+    BookDetailsComponent,
+    UserProfileComponent,
     
   ],
   imports: [
