@@ -1,0 +1,12 @@
+
+œ
+java:S1488@"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂJ$7619fa93-fb0e-4da1-9cd8-c97bdbad8abe
+h
+java:S1905-"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿJ$fe5ae9c6-a81d-4465-8f59-7fba281783d0
+f
+java:S1905/"*Remove this unnecessary cast to "UserDto".(øö¶ŽJ$1e7d469c-0f06-4619-9511-e7b7c4e69372
+v	java:S1256"<This block of commented-out lines of code should be removed.(ø«œ+J$d89f1442-eb92-4e11-abb8-e20300ea8484
+¶
+java:S6204B"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$16bfa51f-8b4f-4a0c-893b-309257edf6e3
+p
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷Ž”J$534ebcf1-d06e-405d-8cb1-6c1ea215be95
