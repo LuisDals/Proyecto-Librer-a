@@ -1,6 +1,6 @@
 import { BookRegister } from "./bookRegister.model";
 
-export class book {
+export class Book {
     id: number;
     bookName: string;
     image: string;
