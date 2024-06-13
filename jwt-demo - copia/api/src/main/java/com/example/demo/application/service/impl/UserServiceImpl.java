@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -66,6 +65,11 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
 
         return userDtos;
+    }
+
+    @Override
+    public void deleteUser(String username) {
+        this.userPersistence.deleteUser(username);
     }
 }
 

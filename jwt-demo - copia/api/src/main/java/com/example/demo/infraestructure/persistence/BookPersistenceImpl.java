@@ -35,4 +35,14 @@ public class BookPersistenceImpl implements BookPersistence{
     public Optional<Book> findById(Long bookId) {
         return this.bookRepository.findById(bookId);
     }
+
+    @Override
+    public void deleteBook(Long bookId) {
+        this.bookRepository.deleteById(bookId);
+    }
+
+    @Override
+    public Book updateBook(Book book) {
+        return this.bookRepository.save(book);
+    }
 }

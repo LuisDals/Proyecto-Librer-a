@@ -28,4 +28,9 @@ public class UserPersistenceImpl implements UserPersistence {
         return this.userJpaRepository.save(user);
     }
 
+    @Override
+    public void deleteUser(String username) {
+        this.userJpaRepository.deleteById(username);
+    }
+
 }

@@ -1,10 +1,13 @@
 package com.example.demo.application.service.impl;
 
 import com.example.demo.application.dto.BookDto;
+import com.example.demo.application.dto.UserDto;
 import com.example.demo.application.mapper.BookMapper;
 import com.example.demo.application.service.BookService;
 import com.example.demo.domain.entity.Book;
+import com.example.demo.domain.entity.User;
 import com.example.demo.domain.persistence.BookPersistence;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -48,5 +51,22 @@ public class BookServiceImpl implements BookService {
         Book book = this.bookMapper.toEntity(bookDto);
         book = this.bookPersistence.save(book);
         return this.bookMapper.toDto(book);
+    }
+
+    @Override
+    public void deleteBook(Long bookId) {
+        this.bookPersistence.deleteBook(bookId);
+    }
+
+    @Override
+    public BookDto updateBook(BookDto bookDto) {
+        Optional<Book> bookOptional = this.bookPersistence.findById(bookDto.getId());
+        if (bookOptional.isPresent()) {
+            Book book = (Book)this.bookMapper.toEntity(bookDto);
+            Book updatedBook = this.bookPersistence.updateBook(book);
+            return (BookDto)this.bookMapper.toDto(updatedBook);
+        } else {
+            throw new EntityNotFoundException("Usuario no encontrado con nombre de usuario: " + bookDto.getId());
+        }
     }
 }

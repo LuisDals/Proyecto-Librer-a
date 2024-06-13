@@ -1,3 +1,7 @@
 
-™
-java:S3655#"XCall "optionalBook.isPresent()" or "!optionalBook.isEmpty()" before accessing the value.(¯êµ­üÿÿÿÿJ$5525871c-75c0-46ae-ad9e-c5c61c6de0d9
+ 
+java:S3655&"XCall "optionalBook.isPresent()" or "!optionalBook.isEmpty()" before accessing the value.(¯êµ­üÿÿÿÿ8ÆãÇ›2J$7b7db856-edf9-45e1-8639-d6452bbb2d36
+j
+java:S1905A"'Remove this unnecessary cast to "Book".(ğ¨†Ô8ˆªÉ›2J$754c5c2b-b10a-4f5b-ab6c-7935c8d336f7
+r
+java:S1905C"*Remove this unnecessary cast to "BookDto".(Ş›¢ñÿÿÿÿÿ8®éË›2J$9acabff3-6057-43d3-87e2-62bf2cd4663d

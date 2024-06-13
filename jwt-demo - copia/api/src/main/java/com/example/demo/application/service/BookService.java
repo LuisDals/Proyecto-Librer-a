@@ -11,4 +11,6 @@ public interface BookService {
     BookDto getBookById(Long bookId);
     Page<BookDto>getBookByGenre(String genre, Pageable pageable);
     BookDto createBook(BookDto bookDto);
+    void deleteBook(Long bookId);
+    BookDto updateBook(BookDto bookDto);
 }

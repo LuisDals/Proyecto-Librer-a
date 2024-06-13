@@ -8,4 +8,5 @@ public interface UserPersistence {
     User save(User user);
     Optional<User> find(String username);
     User updateUser(User user);
+    void deleteUser(String username);
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/user")
 public class UserController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
@@ -21,7 +21,7 @@ public class UserController {
     }
 
     // @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(value = "/user/{username}", produces = "application/json")
+    @GetMapping(value = "/{username}", produces = "application/json")
     public ResponseEntity<UserDto> getUserInfo(@PathVariable String username) {
         UserDto user = userService.findUser(username);
         return new ResponseEntity<>(user, HttpStatus.OK);
@@ -39,5 +39,11 @@ public class UserController {
         userDto.setPassword(encodedPassword);
         UserDto updatedUser = this.userService.updateUser(userDto);
         return ResponseEntity.ok(updatedUser);
+    }
+
+    @DeleteMapping({"/{username}"})
+    public ResponseEntity<Void> deleteItem(@PathVariable String username) {
+        this.userService.deleteUser(username);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

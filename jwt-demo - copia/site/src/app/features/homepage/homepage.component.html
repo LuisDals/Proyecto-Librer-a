@@ -1,42 +1,9 @@
-<!-- <div *ngIf="recentSongs.length > 0">
-    <h1 class="text-center">Releases</h1>
-    <div class="row justify-content-center">
-        <ng-container *ngFor="let recentSong of recentSongs">
-            <div class="col-lg-2 col-md-3 col-sm-4 mb-4">
-                <div class="card position-relative">
-                    <img [src]="'data:image/jpeg;base64,' + recentSong.image" class="card-img-top img-fluid" alt="Song Image">
-                    <div class="card-body position-absolute bottom-0 start-0">
-                        <p class="card-text mb-1">{{ recentSong.album }}</p>
-                        <p class="card-text mb-1">{{ recentSong.style }}</p>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
-    </div>
-    <div class="text-end">
-        <a class="btn btn-primary" [routerLink]="['/songList']">All songs</a>
-    </div>
+<div class=boton> 
+    <a class="btn btn-primary" [routerLink]="['/user-profile/', user?.username]">Profile</a>
 </div>
- -->
-<!--  <div *ngIf="recentSongs.length > 0">
-    <h1 class="text-center">Releases</h1>
-    <div class="row justify-content-center">
-        <ng-container *ngFor="let recentSong of recentSongs">
-            <div class="col-lg-2 col-md-4 col-sm-5 mb-4"> 
-                <div class="card position-relative h-100"> 
-                    <img [src]="'data:image/jpeg;base64,' + recentSong.image" class="card-img-top img-fluid" alt="Song Image">
-                    <div class="card-body position-absolute bottom-0 start-0">
-                        <p class="card-text mb-1">{{ recentSong.album }}</p>
-                        <p class="card-text mb-1">{{ recentSong.style }}</p>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
-    </div>
-    <div class="text-end mt-16"> 
-        <a class="btn btn-primary" [routerLink]="['/songList']">All songs</a>
-    </div>
-</div> -->
+<div class="btn"  *ngIf="user?.role === 'ADMIN'">
+    <button type="button" class="btn btn-warning btn-block">All profiles</button>
+</div>
 <div *ngIf="recentSongs.length > 0">
     <h1 class="text-center">Releases</h1>
     <div class="row justify-content-center">

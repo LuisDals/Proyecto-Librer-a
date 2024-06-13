@@ -10,4 +10,5 @@ public interface UserService {
    UserDto findUser(String username);
    UserDto updateUser(UserDto userDto);
    List<UserDto> getAllUsers();
+   void deleteUser(String username);
 }

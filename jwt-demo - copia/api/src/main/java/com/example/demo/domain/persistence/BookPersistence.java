@@ -11,4 +11,6 @@ public interface BookPersistence {
     Page<Book> findByGenre(String genre, Pageable pageable);
     Book save(Book book);
     Optional<Book> findById(Long bookId);
+    void deleteBook(Long bookId);
+    Book updateBook(Book book);
 }

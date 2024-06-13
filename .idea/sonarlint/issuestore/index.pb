@@ -61,3 +61,7 @@ ajwt-demo - copia/api/src/main/java/com/example/demo/application/service/impl/Us
 ejwt-demo - copia/api/src/main/java/com/example/demo/infraestructure/rest/RentalRequestController.java,e\6\e62d23145d77f240192570058b463ad7901b62b4
 ~
 Njwt-demo - copia/api/src/main/java/com/example/demo/config/SecurityConfig.java,a\1\a1642d88bb70648b53434e36d654e75d54927cc5
+ˆ
+Xjwt-demo - copia/api/src/main/java/com/example/demo/application/service/UserService.java,8\f\8fe78123b4ae25037274976df58a2b2f4b0931ef
+ˆ
+Xjwt-demo - copia/api/src/main/java/com/example/demo/application/service/BookService.java,c\0\c01ed0fd93703afe24a537e3a5a8a7f82cfd14fa

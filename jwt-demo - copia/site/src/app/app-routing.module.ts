@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'songDetail/:songName', component: SongDetailsComponent },
   { path: 'bookDetail/:bookId', component: BookDetailsComponent},
   { path: 'bookList', component: BookListComponent}, 
-  { path: 'user-progile/:userName', component: UserProfileComponent}
+  { path: 'user-profile/:username', component: UserProfileComponent}
 ];
 
 @NgModule({
