@@ -9,6 +9,7 @@ import { SongDetailsComponent } from './features/song-details/song-details.compo
 import { BookDetailsComponent } from './features/book-details/book-details.component';
 import { BookListComponent } from './features/book-list/book-list.component';
 import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
+import { BookCreationComponent } from './features/book-creation/book-creation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'songDetail/:songName', component: SongDetailsComponent },
   { path: 'bookDetail/:bookId', component: BookDetailsComponent},
   { path: 'bookList', component: BookListComponent}, 
-  { path: 'user-profile/:username', component: UserProfileComponent}
+  { path: 'user-profile/:username', component: UserProfileComponent},
+  { path: 'createBook', component: BookCreationComponent}
 ];
 
 @NgModule({

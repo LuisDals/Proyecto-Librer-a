@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/auth/books")
 public class BookController {
@@ -19,10 +21,16 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<Page<BookDto>> getAllBooks(
+    @GetMapping(value = "/all")
+    public ResponseEntity<List<BookDto>> getAllBooks(){
+        List<BookDto> books = bookService.getAllBooks();
+        return ResponseEntity.ok(books);
+    }
+
+    @GetMapping("/allPaged")
+    public ResponseEntity<Page<BookDto>> getAllBooksPaged(
             @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-        Page<BookDto> books = this.bookService.getAllBooks(pageable);
+        Page<BookDto> books = this.bookService.getAllBooksPaged(pageable);
         return ResponseEntity.ok(books);
     }
 

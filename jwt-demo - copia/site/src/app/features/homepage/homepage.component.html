@@ -1,6 +1,7 @@
 <div class=boton> 
     <a class="btn btn-primary" [routerLink]="['/user-profile/', user?.username]">Profile</a>
 </div>
+<app-book-list></app-book-list>
 <div class="btn"  *ngIf="user?.role === 'ADMIN'">
     <button type="button" class="btn btn-warning btn-block">All profiles</button>
 </div>

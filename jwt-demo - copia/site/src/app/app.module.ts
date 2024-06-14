@@ -17,6 +17,7 @@ import { StarRatingComponent } from './features/song-details/star-rating/star-ra
 import { BookListComponent } from './features/book-list/book-list.component';
 import { BookDetailsComponent } from './features/book-details/book-details.component';
 import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
+import { BookCreationComponent } from './features/book-creation/book-creation.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { UserProfileComponent } from './auth/user/user-profile/user-profile.comp
     BookListComponent,
     BookDetailsComponent,
     UserProfileComponent,
-    
+    BookCreationComponent
   ],
   imports: [
     BrowserModule,

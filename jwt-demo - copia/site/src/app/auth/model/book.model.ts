@@ -1,15 +1,15 @@
 import { BookRegister } from "./bookRegister.model";
 
 export class Book {
-    id: number;
+    id?: number;
     bookName: string;
     image: string;
     author: string;
     genre: string;
-    publicationDate?: Date;
     rentPrice: number;
     salePrice: number;
     available: boolean;
+    publicationDate?: Date;
     bookRegister?: BookRegister[];
 
     constructor(

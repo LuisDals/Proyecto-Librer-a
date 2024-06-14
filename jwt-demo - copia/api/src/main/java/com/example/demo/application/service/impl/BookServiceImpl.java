@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,7 +28,7 @@ public class BookServiceImpl implements BookService {
 
 
     @Override
-    public Page<BookDto> getAllBooks(Pageable pageable) {
+    public Page<BookDto> getAllBooksPaged(Pageable pageable) {
         Page<Book> bookPage = bookPersistence.findAll(pageable);
         return bookPage.map(bookMapper::toDto);
     }
@@ -68,5 +69,11 @@ public class BookServiceImpl implements BookService {
         } else {
             throw new EntityNotFoundException("Usuario no encontrado con nombre de usuario: " + bookDto.getId());
         }
+    }
+
+    @Override
+    public List<BookDto> getAllBooks() {
+        List<Book> books = this.bookPersistence.getAllBooks();
+        return bookMapper.toDto(books);
     }
 }

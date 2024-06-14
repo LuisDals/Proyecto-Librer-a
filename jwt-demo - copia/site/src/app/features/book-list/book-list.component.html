@@ -1,4 +1,25 @@
 <p id="prueba">book-list works!</p>
+<div class="btn"  *ngIf="user?.role === 'ADMIN'">
+    <a [routerLink]="['/createBook']" class="btn btn-primary">Create book</a>
+</div>
+
+<div id="bookList">
+    <div *ngFor="let book of bookList">
+        {{book.bookName}}
+        {{book.publicationDate}}
+        {{book.author}}
+        {{book.genre}}
+        {{book.rentPrice}}
+        {{book.salePrice}}
+        <a [routerLink]="['/bookDetail/' + book.id]" class="btn btn-primary">Ver detalles</a>
+    </div>
+    <div class="botoneraPaginacion table-container">
+        <button [disabled]="first" class="btn btn-secondary btnAtras btnUno" (click)="previousPage()">Anterior</button>
+        <span>Página {{page+1}} de {{totalPages}} - Elementos totales: {{totalElements}}</span>
+        <button [disabled]="last" class="btn btn-secondary btnAtras btnUno" (click)="nextPage()">Siguiente</button>
+    </div>
+</div>
+
 <div>
     <button type="button" class="btn btn-primary btn-md" (click)="printBookList()">Imprimir pdf</button>
 </div>

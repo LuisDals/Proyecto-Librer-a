@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -44,5 +45,10 @@ public class BookPersistenceImpl implements BookPersistence{
     @Override
     public Book updateBook(Book book) {
         return this.bookRepository.save(book);
+    }
+
+    @Override
+    public List<Book> getAllBooks() {
+        return this.bookRepository.findAll();
     }
 }

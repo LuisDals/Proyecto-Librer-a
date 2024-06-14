@@ -12,7 +12,17 @@ export class BookService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  public getAllBooks(): Observable<Book[]>{
+  public getAllBooksPaged(
+    page: number,
+    size: number,
+    sort: string
+  ): Observable<Book[]>{
+    let pageUrl = '?page=' + page + '&size=' + size + '&sort=' + sort;
+    const url: string = "http://localhost:8080/auth/books/allPaged" + pageUrl;
+    return this.http.get<Book[]>(url);
+  }
+
+  public  getAllBooks(): Observable<Book[]> {
     const url: string = "http://localhost:8080/auth/books/all";
     return this.http.get<Book[]>(url);
   }
