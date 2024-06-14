@@ -39,7 +39,6 @@ export class UpdateBookComponent implements OnInit{
       next: (updatedBook) => {
         this.book = updatedBook;
         alert('Book updated successfully');
-        this.router.navigate(['/bookList']);
       },
       error: (err) => console.error('Error updating book:', err)
     });

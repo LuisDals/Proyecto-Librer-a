@@ -3,6 +3,8 @@ import { Users } from '../../model/user.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { BookRegister } from '../../model/bookRegister.model';
+import { RentalService } from '../../service/rental.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,14 +18,17 @@ export class UserProfileComponent {
   user?: Users; 
   users: Users[] = [];
   token: string = '';
+  rentals: BookRegister[] = [];
+  totalRentalDays: number = 0;
 
-  constructor(private router: Router, private authService: AuthService, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: Router, private authService: AuthService, private route: ActivatedRoute, private http: HttpClient, private rentalService: RentalService) { }
 
   ngOnInit(): void {
     this.username = this.route.snapshot.params['username']; 
     console.log(this.username);
     this.loadUserProfile();
     this.loadUsersProfiles();
+    this.loadRentals();
   }
 
   loadUserProfile() {
@@ -97,4 +102,53 @@ export class UserProfileComponent {
       this.deleteAccount();
     }
   }
+
+  /* loadRentals() {
+    this.rentalService.getRentalsByUsername(this.username).subscribe(
+      (rentals: BookRegister[]) => {
+        console.log("Alquileres", rentals);
+        this.rentals = rentals;
+      },
+      (error) => {
+        console.error('Error al cargar los alquileres:', error);
+      }
+    );
+  } */
+  
+    /* loadRentals() {
+      this.rentalService.getRentalsByUsername(this.username).subscribe(
+        (rentals: BookRegister[]) => {
+          console.log("Alquileres", rentals);
+          this.rentals = rentals;
+        },
+        (error) => {
+          console.error('Error al cargar los alquileres:', error);
+        }
+      );
+    } */
+
+
+    loadRentals(){
+      this.rentalService.getRentalsByUsername(this.username).subscribe({
+        next: (data: any) => {
+          this.rentals = data.content;
+        }
+      })
+    }
+    /* getAllBooksPaged(){
+      this.bookService.getAllBooksPaged(this.page, this.size, this.sort).subscribe({
+        next: (data: any) => {
+          this.bookList = data.content;
+          this.first = data.first;
+            this.last = data.last;
+            this.totalPages = data.totalPages;
+            this.totalElements = data.totalElements;
+          console.log("Objeto", data.content);
+        }, 
+        error: (error) => {
+          console.log("Ha ocurrido un error en la llamada de las canciones " + error);
+        }
+      });
+    } */
+
 }

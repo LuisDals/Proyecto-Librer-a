@@ -19,7 +19,9 @@ export class HomepageComponent implements OnInit{
   songList: Song[] = [];
   recentSongs: Song[] = [];
 
-  constructor(private authService : AuthService, private router : Router, private route: ActivatedRoute, private http: HttpClient, private songService: SongServiceService){}
+  constructor(private authService : AuthService, private router : Router, private route: ActivatedRoute, private http: HttpClient, private songService: SongServiceService){
+    this.username = this.route.snapshot.paramMap.get('username')!;
+  }
 
   ngOnInit(): void {
         this.route.queryParamMap.subscribe(params => {

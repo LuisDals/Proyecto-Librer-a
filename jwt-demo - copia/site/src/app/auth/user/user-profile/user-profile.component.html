@@ -34,6 +34,24 @@
             </div>
         </div>
     </div>
+    <!-- rental-history.component.html -->
+    <div *ngIf="rentals.length > 0">
+      <h3>Rentals:</h3>
+      <ul>
+        <li *ngFor="let rental of rentals">
+          <strong>Book Name:</strong> {{ rental.bookName }} <br>
+          <strong>Date Pick Up:</strong> {{ rental.datePickUp | date }} <br>
+          <strong>Return Date:</strong> {{ rental.returnDate | date }} <br>
+          <strong>Price With Discount:</strong> {{ rental.priceWithDiscount | currency:'USD':'symbol' }}
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="!isAuthenticated">
+      <p>Please login to view this page.</p>
+      <button (click)="goToLogin()">Login</button>
+    </div>
+
 </div>
 <div *ngIf="user?.role === 'ADMIN'">
   <div *ngFor="let usuario of users">

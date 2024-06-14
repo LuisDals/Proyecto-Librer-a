@@ -1,5 +1,21 @@
-<p>book-details works!</p>
+<!-- <p>book-details works!</p>
 <div  class="btn"  *ngIf="user?.role === 'ADMIN'">
   <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete book</button>
   <button type="button" class="btn btn-primary" (click)="goToUpdateBook()">Update Book</button>
+</div>
+ -->
+ <div *ngIf="bookDetail">
+  <h2>{{ bookDetail.bookName }}</h2>
+  <p><strong>Author:</strong> {{ bookDetail.author }}</p>
+  <p><strong>Genre:</strong> {{ bookDetail.genre }}</p>
+  <p><strong>Rent Price:</strong> {{ bookDetail.rentPrice | currency:'USD':'symbol' }}</p>
+
+  <div *ngIf="user?.role === 'ADMIN'">
+    <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete book</button>
+    <button type="button" class="btn btn-primary" (click)="goToUpdateBook()">Update Book</button>
+  </div>
+
+  <div *ngIf="user?.role !== 'ADMIN'">
+    <button type="button" class="btn btn-success btn-block" (click)="rentBook()">Rent Book</button>
+  </div>
 </div>

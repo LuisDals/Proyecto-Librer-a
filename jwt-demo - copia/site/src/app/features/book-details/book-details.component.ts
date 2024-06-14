@@ -5,6 +5,7 @@ import { Book } from 'src/app/auth/model/book.model';
 import { Users } from 'src/app/auth/model/user.model';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { BookService } from 'src/app/auth/service/book.service';
+import { RentalService } from 'src/app/auth/service/rental.service';
 
 @Component({
   selector: 'app-book-details',
@@ -18,13 +19,13 @@ export class BookDetailsComponent implements OnInit {
   isAuthenticated = false;
   user?: Users;
 
-  constructor(private bookService: BookService, private route: ActivatedRoute, private router: Router, private authService: AuthService, private http: HttpClient) {
+  constructor(private bookService: BookService, private route: ActivatedRoute, private router: Router, private authService: AuthService, private http: HttpClient, private rentalService: RentalService) {
     this.bookId = +this.route.snapshot.paramMap.get('bookId')!;
   }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
-      this.username = params.get('user') ?? '';
+      this.username = params.get('username') ?? '';
       const token = this.authService.getToken();
       if (token) {
         this.isAuthenticated = true;
@@ -71,5 +72,24 @@ export class BookDetailsComponent implements OnInit {
 
   goToUpdateBook(): void {
     this.router.navigate(['/bookUpdate', this.bookId]);
+  }
+  
+  rentBook(): void {
+    if (this.isAuthenticated && this.user) {
+      const today = new Date();
+      const returnDate = new Date();
+      returnDate.setDate(today.getDate() + 7); // Ejemplo: devolución en una semana
+
+      this.rentalService.rentBook(this.username, this.bookId, today, returnDate).subscribe({
+        next: (rental) => {
+          alert(`Book rented successfully. Return by: ${returnDate.toLocaleDateString()}`);
+          // Puedes hacer algo después de alquilar el libro, como redirigir o actualizar los datos
+        },
+        error: (err) => console.error('Error renting book:', err)
+      });
+    } else {
+      alert('Please login to rent this book.');
+      // Redirigir al usuario al login u otra acción según tu flujo de la aplicación
+    }
   }
 }

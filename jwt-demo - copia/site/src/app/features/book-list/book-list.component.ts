@@ -90,7 +90,7 @@ export class BookListComponent implements OnInit{
   }
 
   goToBookDetail(bookId: number){
-    const user = this.username;
-    this.router.navigate(['/bookDetail', bookId], { queryParams:{ user }});
+    const username = this.username;
+    this.router.navigate(['/bookDetail', bookId], { queryParams:{ username }});
   }
 }

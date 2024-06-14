@@ -7,6 +7,7 @@ export class Users {
     lastName: string;
     email: string;
     role: Role;
+    totalRentalDays: number;
 
 
     constructor(
@@ -15,7 +16,8 @@ export class Users {
         firstName: string,
         lastName: string,
         email: string,
-        role: Role
+        role: Role,
+        totalRentalDays: number
     ) {
         this.username = username
         this.password = password
@@ -23,5 +25,6 @@ export class Users {
         this.lastName = lastName
         this.email = email
         this.role = role
+        this.totalRentalDays = totalRentalDays;
     }
 }

@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit{
   username: string = '';
   isAuthenticated = false;
   user?: Users; 
+  date: Date = new Date();
 
   constructor(private router: Router, private authService: AuthService, private route: ActivatedRoute, private http: HttpClient) { }
   ngOnInit(): void {
@@ -85,7 +86,7 @@ export class HeaderComponent implements OnInit{
     }
   }
 
-  goToHomePage(): void {
+  /* goToHomePage(): void {
     this.router.navigate(['/homepage'], { queryParams: { user: this.username } });
-  }
+  } */
 }
