@@ -1,26 +1,37 @@
-<p id="prueba">book-list works!</p>
-<div class="btn"  *ngIf="user?.role === 'ADMIN'">
-    <a [routerLink]="['/createBook']" class="btn btn-primary">Create book</a>
+<div class="container mt-4">
+    <!-- Botón para crear libro (solo visible para usuarios ADMIN) -->
+    <div class="btn mb-3" *ngIf="user?.role === 'ADMIN'">
+        <a [routerLink]="['/createBook']" class="btn btn-primary">Create book</a>
+    </div>
+
+    <!-- Contenedor principal de la lista de libros y paginación -->
+    <div id="bookList">
+        <!-- Lista de libros -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4" *ngFor="let book of bookList">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.bookName }}</h5>
+                        <p class="card-text">Publication Date: {{ book.publicationDate }}</p>
+                        <p class="card-text">Author: {{ book.author }}</p>
+                        <p class="card-text">Genre: {{ book.genre }}</p>
+                        <a (click)="goToBookDetail(book.id!)" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botonera de paginación centrada -->
+        <div class="botoneraPaginacion table-container mt-4 text-center">
+            <button [disabled]="first" class="btn btn-secondary btnAtras btnUno" (click)="previousPage()">Anterior</button>
+            <span class="mx-3">Página {{ page + 1 }} de {{ totalPages }} - Elementos totales: {{ totalElements }}</span>
+            <button [disabled]="last" class="btn btn-secondary btnAtras btnUno" (click)="nextPage()">Siguiente</button>
+        </div>
+    </div>
+
+    <!-- Botón para imprimir pdf (alineado a la derecha y abajo) -->
+    <div class="text-right mt-4">
+        <button type="button" class="btn btn-primary btn-md" (click)="printBookList()">Imprimir pdf</button>
+    </div>
 </div>
 
-<div id="bookList">
-    <div *ngFor="let book of bookList">
-        {{book.bookName}}
-        {{book.publicationDate}}
-        {{book.author}}
-        {{book.genre}}
-        {{book.rentPrice}}
-        {{book.salePrice}}
-        <!-- <a [routerLink]="['/bookDetail/' + book.id]" class="btn btn-primary">Ver detalles</a> -->
-        <a (click)="goToBookDetail(book.id!)" class="btn btn-primary">Ver detalles</a>
-    </div>
-    <div class="botoneraPaginacion table-container">
-        <button [disabled]="first" class="btn btn-secondary btnAtras btnUno" (click)="previousPage()">Anterior</button>
-        <span>Página {{page+1}} de {{totalPages}} - Elementos totales: {{totalElements}}</span>
-        <button [disabled]="last" class="btn btn-secondary btnAtras btnUno" (click)="nextPage()">Siguiente</button>
-    </div>
-</div>
-
-<div>
-    <button type="button" class="btn btn-primary btn-md" (click)="printBookList()">Imprimir pdf</button>
-</div>

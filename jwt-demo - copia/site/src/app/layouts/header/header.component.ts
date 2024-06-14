@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit{
   isAuthenticated = false;
   user?: Users; 
   date: Date = new Date();
+  isCollapsed = true;
 
   constructor(private router: Router, private authService: AuthService, private route: ActivatedRoute, private http: HttpClient) { }
   ngOnInit(): void {

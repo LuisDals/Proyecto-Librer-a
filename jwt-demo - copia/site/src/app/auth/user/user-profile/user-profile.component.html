@@ -1,65 +1,96 @@
-<p>user-profile works!</p>
 <div class="container mt-5" *ngIf="user?.role === 'USER'">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header text-center">
-                    <h3>User Profile</h3>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" value="{{user?.username}}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" value="{{user?.firstName}}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" value="{{user?.lastName}}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" value="{{user?.email}}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Role</label>
-                            <input type="role" class="form-control" id="role" value="{{user?.role}}" disabled>
-                        </div>
-                        <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete Account</button>
-                    </form>
-                </div>
-            </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>User Profile</h3>
         </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" value="{{user?.username}}" disabled>
+            </div>
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" value="{{user?.firstName}}" disabled>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" value="{{user?.lastName}}" disabled>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" value="{{user?.email}}" disabled>
+            </div>
+            <div class="form-group">
+              <label for="role">Role</label>
+              <input type="role" class="form-control" id="role" value="{{user?.role}}" disabled>
+            </div>
+            <button id="deleteBoton" type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete Account</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <!-- rental-history.component.html -->
-    <div *ngIf="rentals.length > 0">
-      <h3>Rentals:</h3>
-      <ul>
-        <li *ngFor="let rental of rentals">
-          <strong>Book Name:</strong> {{ rental.bookName }} <br>
-          <strong>Date Pick Up:</strong> {{ rental.datePickUp | date }} <br>
-          <strong>Return Date:</strong> {{ rental.returnDate | date }} <br>
-          <strong>Price With Discount:</strong> {{ rental.priceWithDiscount | currency:'USD':'symbol' }}
-        </li>
-      </ul>
+  </div>
+  <!-- rental-history.component.html -->
+  <!-- <div *ngIf="rentals.length > 0">
+    <h3>Rentals:</h3>
+    <ul>
+      <li *ngFor="let rental of rentals">
+        <strong>Book Name:</strong> {{ rental.bookName }} <br>
+        <strong>Date Pick Up:</strong> {{ rental.datePickUp | date }} <br>
+        <strong>Return Date:</strong> {{ rental.returnDate | date }} <br>
+      </li>
+    </ul>
+  </div> -->
+  <div class="row justify-content-center mt-4" *ngIf="rentals.length > 0">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>Rental History</h3>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let rental of rentals">
+              <strong>Book Name:</strong> {{ rental.bookName }} <br>
+              <strong>Date Pick Up:</strong> {{ rental.datePickUp | date }} <br>
+              <strong>Return Date:</strong> {{ rental.returnDate | date }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div *ngIf="!isAuthenticated">
-      <p>Please login to view this page.</p>
-      <button (click)="goToLogin()">Login</button>
-    </div>
-
+  </div>
 </div>
-<div *ngIf="user?.role === 'ADMIN'">
-  <div *ngFor="let usuario of users">
-    {{usuario?.username}}
-    {{usuario?.firstName}}
-    {{usuario?.lastName}}
-    {{usuario?.email}}
-    {{usuario?.role}}
-    <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete Account</button>
+
+<div class="container mt-5" *ngIf="user?.role === 'ADMIN'">
+  <div class="row">
+      <div class="col-12">
+          <h3>Users List</h3>
+      </div>
+  </div>
+  <div class="row" *ngFor="let usuario of users">
+      <div class="col-12 col-md-2">
+          <strong>Username:</strong> {{usuario?.username}}
+      </div>
+      <div class="col-12 col-md-2">
+          <strong>First Name:</strong> {{usuario?.firstName}}
+      </div>
+      <div class="col-12 col-md-2">
+          <strong>Last Name:</strong> {{usuario?.lastName}}
+      </div>
+      <div class="col-12 col-md-3">
+          <strong>Email:</strong> {{usuario?.email}}
+      </div>
+      <div class="col-12 col-md-1">
+          <strong>Role:</strong> {{usuario?.role}}
+      </div>
+      <div class="col-12 col-md-2 text-md-left text-lg-right mt-2 mt-md-0">
+          <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete Account</button>
+      </div>
+      <div class="col-12">
+          <hr>
+      </div>
   </div>
 </div>

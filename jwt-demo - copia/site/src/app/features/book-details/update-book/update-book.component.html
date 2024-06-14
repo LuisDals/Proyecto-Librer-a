@@ -1,37 +1,41 @@
-<p>update-book works!</p>
 <div class="container mt-5">
     <div class="row justify-content-center">
-      <div class="col-md-6" *ngIf="book">
-        <div class="card">
-          <div class="card-header text-center">
-            <h3>Book Details</h3>
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="id" [(ngModel)]="book.id" disabled>
-              </div>
-            <div class="form-group">
-              <label for="title">Title</label>
-              <input type="text" class="form-control" id="title" [(ngModel)]="book.bookName">
+        <div class="col-md-6" *ngIf="book">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Update Book</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="id">Id</label>
+                        <input type="text" class="form-control" id="id" [(ngModel)]="book.id" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" [(ngModel)]="book.bookName">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" class="form-control" id="author" [(ngModel)]="book.author">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" class="form-control" id="genre" [(ngModel)]="book.genre">
+                    </div>
+                    <div class="form-group">
+                        <label for="publicationDate">Publication Date</label>
+                        <input type="date" class="form-control" id="publicationDate" [(ngModel)]="book.publicationDate" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="available">Available</label>
+                        <select class="form-control" id="available" [(ngModel)]="book.available">
+                            <option [ngValue]="true">True</option>
+                            <option [ngValue]="false">False</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="updateBook()">Update Book</button>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="author">Author</label>
-              <input type="text" class="form-control" id="author" [(ngModel)]="book.author">
-            </div>
-            <div class="form-group">
-              <label for="genre">Genre</label>
-              <input type="text" class="form-control" id="genre" [(ngModel)]="book.genre">
-            </div>
-            <div class="form-group">
-                <label for="genre">Rent Price</label>
-                <input type="number" class="form-control" id="rentPrice" [(ngModel)]="book.rentPrice">
-              </div>
-            <!-- Otros campos del libro -->
-  
-            <button type="button" class="btn btn-primary" (click)="updateBook()">Update Book</button>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>

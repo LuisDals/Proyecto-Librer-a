@@ -50,18 +50,42 @@ export class BookListComponent implements OnInit{
     });
   }
 
-  printBookList() {
-    const doc = new jsPDF();
-
-    doc.setLineWidth(0.5);
-    doc.rect(10, 10, doc.internal.pageSize.width - 20, doc.internal.pageSize.height - 20);
-
-    const element = document.getElementById("bookList");
-    const textContent = element?.textContent?.trim() || '';
-
-    doc.text(textContent, 20, 20);
-
-    doc.save('book-list.pdf');
+    printBookList() {
+      const doc = new jsPDF();
+  
+      doc.setLineWidth(0.5);
+      doc.rect(10, 10, doc.internal.pageSize.width - 20, doc.internal.pageSize.height - 20);
+  
+      const element = document.getElementById("bookList");
+  
+      // Obtener todos los elementos con clase 'card' dentro de '#bookList'
+      const cards = element?.getElementsByClassName("card");
+  
+      let yOffset = 20; // Iniciar en una posición vertical adecuada
+  
+      // Iterar sobre cada tarjeta y agregar su contenido al PDF
+      if (cards) {
+          for (let i = 0; i < cards.length; i++) {
+              const card = cards[i];
+  
+              // Obtener contenido específico de la tarjeta
+              const bookName = card.querySelector('.card-title')?.textContent?.trim() || '';
+              const publicationDate = card.querySelector('.publication-date')?.textContent?.trim() || '';
+              const author = card.querySelector('.author')?.textContent?.trim() || '';
+              const genre = card.querySelector('.genre')?.textContent?.trim() || '';
+  
+              // Agregar contenido de la tarjeta al PDF en formato de tabla
+              doc.text(bookName, 20, yOffset);
+              doc.text(publicationDate, 70, yOffset);
+              doc.text(author, 120, yOffset);
+              doc.text(genre, 170, yOffset);
+  
+              // Añadir espacio vertical para la próxima tarjeta
+              yOffset += 10; // Ajusta este valor según sea necesario para el espaciado deseado
+          }
+      }
+  
+      doc.save('book-list.pdf');
   }
 
   getAllBooksPaged(){

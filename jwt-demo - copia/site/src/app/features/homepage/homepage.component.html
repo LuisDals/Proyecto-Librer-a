@@ -1,4 +1,12 @@
-<div class=boton> 
-    <a class="btn btn-primary" [routerLink]="['/user-profile/', user?.username]">Profile</a>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9"> <!-- Columna principal que ocupa 9 columnas en pantallas grandes -->
+            <app-book-list></app-book-list>
+        </div>
+        <div class="col-lg-3 text-center text-lg-right mt-3 mt-lg-0"> <!-- Columna que ocupa 3 columnas en pantallas grandes, alineada a la derecha -->
+            <div class="boton">
+                <a class="btn btn-primary" [routerLink]="['/user-profile/', user?.username]">Profile</a>
+            </div>
+        </div>
+    </div>
 </div>
-<app-book-list></app-book-list>

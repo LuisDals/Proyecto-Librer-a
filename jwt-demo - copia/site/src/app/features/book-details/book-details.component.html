@@ -1,21 +1,21 @@
-<!-- <p>book-details works!</p>
-<div  class="btn"  *ngIf="user?.role === 'ADMIN'">
-  <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete book</button>
-  <button type="button" class="btn btn-primary" (click)="goToUpdateBook()">Update Book</button>
-</div>
- -->
- <div *ngIf="bookDetail">
-  <h2>{{ bookDetail.bookName }}</h2>
-  <p><strong>Author:</strong> {{ bookDetail.author }}</p>
-  <p><strong>Genre:</strong> {{ bookDetail.genre }}</p>
-  <p><strong>Rent Price:</strong> {{ bookDetail.rentPrice | currency:'USD':'symbol' }}</p>
-
-  <div *ngIf="user?.role === 'ADMIN'">
-    <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete book</button>
-    <button type="button" class="btn btn-primary" (click)="goToUpdateBook()">Update Book</button>
-  </div>
-
-  <div *ngIf="user?.role !== 'ADMIN'">
-    <button type="button" class="btn btn-success btn-block" (click)="rentBook()">Rent Book</button>
+<div class="container mt-4">
+  <div *ngIf="bookDetail" class="card">
+    <div class="card-body">
+      <h2 class="card-title">{{ bookDetail.bookName }}</h2>
+      <p class="card-text"><strong>Author:</strong> {{ bookDetail.author }}</p>
+      <p class="card-text"><strong>Genre:</strong> {{ bookDetail.genre }}</p>
+      <p class="card-text"><strong>Publication Date:</strong> {{ bookDetail.publicationDate }}</p>
+      <p class="card-text"><strong>Image:</strong> {{ bookDetail.image}}</p>
+      <p class="card-text"><strong>Rent Price:</strong> {{ bookDetail.rentPrice | currency:'USD':'symbol' }}</p>
+      
+      <div *ngIf="user?.role === 'ADMIN'" class="d-flex justify-content-start mt-4">
+        <button type="button" class="btn btn-danger mr-2" (click)="confirmDelete()">Delete book</button>
+        <button type="button" class="btn btn-primary" (click)="goToUpdateBook()">Update Book</button>
+      </div>
+      
+      <div *ngIf="user?.role !== 'ADMIN'" class="d-flex justify-content-start mt-4">
+        <button type="button" class="btn btn-success" (click)="rentBook()">Rent Book</button>
+      </div>
+    </div>
   </div>
 </div>
