@@ -61,13 +61,13 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDto updateBook(BookDto bookDto) {
-        Optional<Book> bookOptional = this.bookPersistence.findById(bookDto.getId());
-        if (bookOptional.isPresent()) {
-            Book book = (Book)this.bookMapper.toEntity(bookDto);
-            Book updatedBook = this.bookPersistence.updateBook(book);
-            return (BookDto)this.bookMapper.toDto(updatedBook);
+        Optional<Book> optionalBook = bookPersistence.findById(bookDto.getId());
+        if (optionalBook.isPresent()) {
+            Book book = bookMapper.toEntity(bookDto);
+            Book updatedBook = bookPersistence.updateBook(book);
+            return bookMapper.toDto(updatedBook);
         } else {
-            throw new EntityNotFoundException("Usuario no encontrado con nombre de usuario: " + bookDto.getId());
+            throw new EntityNotFoundException("Book not found with id: " + bookDto.getId());
         }
     }
 

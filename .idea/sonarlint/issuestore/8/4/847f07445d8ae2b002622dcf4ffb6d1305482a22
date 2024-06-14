@@ -1,11 +1,7 @@
 
  
-java:S3655'"XCall "optionalBook.isPresent()" or "!optionalBook.isEmpty()" before accessing the value.(¯êµ­üÿÿÿÿ8¥›ˆŸ2J$6c21fc11-b03b-4d7a-9cab-1f3a559a5c8a
-j
-java:S1905B"'Remove this unnecessary cast to "Book".(ğ¨†Ô8«›ˆŸ2J$99c4588b-fda5-4e23-8f68-b87bfa75b551
-r
-java:S1905D"*Remove this unnecessary cast to "BookDto".(Ş›¢ñÿÿÿÿÿ8«›ˆŸ2J$6a7a1b3a-28d6-4be1-abc6-8b483c7fdc67
+java:S3655'"XCall "optionalBook.isPresent()" or "!optionalBook.isEmpty()" before accessing the value.(¯êµ­üÿÿÿÿ8¥›ˆŸ2J$02bb75c6-a44e-4097-ad6b-ff41bb3adf7e
 ˆ
-java:S1128"ERemove this unused import 'com.example.demo.application.dto.UserDto'.(¡‚çï8”ßà¯2J$2aff9f8d-c741-444f-81b9-25e588d35df8
+java:S1128"ERemove this unused import 'com.example.demo.application.dto.UserDto'.(¡‚çï8”ßà¯2J$b34f8d51-0de4-4274-9403-ffa42f559b6d
 ƒ
-java:S1128"@Remove this unused import 'com.example.demo.domain.entity.User'.(ê‚Ê—8”ßà¯2J$abdf41d9-80e5-47cb-b49c-923f5c226503
+java:S1128"@Remove this unused import 'com.example.demo.domain.entity.User'.(ê‚Ê—8”ßà¯2J$1123eaff-faa5-4445-a24a-d9fab72dd7fd

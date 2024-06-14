@@ -28,7 +28,7 @@ public class Book {
     private BigDecimal salePrice;
     @Column(name = "available")
     private boolean available;
-    @OneToMany(mappedBy = "book",  cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "book",  cascade = CascadeType.ALL)
     private List<BookRegister> registers;
 
     public Book() {

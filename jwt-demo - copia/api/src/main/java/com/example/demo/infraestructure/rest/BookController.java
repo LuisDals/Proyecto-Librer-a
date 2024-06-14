@@ -1,7 +1,11 @@
 package com.example.demo.infraestructure.rest;
 
 import com.example.demo.application.dto.BookDto;
+import com.example.demo.application.dto.BookRegisterDto;
+import com.example.demo.application.mapper.BookRegisterMapper;
 import com.example.demo.application.service.BookService;
+import com.example.demo.application.service.impl.RentalRequestServiceImpl;
+import com.example.demo.domain.entity.BookRegister;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
@@ -13,15 +17,20 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/auth/books")
 public class BookController {
     private final BookService bookService;
+    private final RentalRequestServiceImpl rentalRequestService;
+    private final BookRegisterMapper bookRegisterMapper;
 
-    public BookController(BookService bookService) {
+    public BookController(BookService bookService, RentalRequestServiceImpl rentalRequestService, BookRegisterMapper bookRegisterMapper) {
         this.bookService = bookService;
+        this.rentalRequestService = rentalRequestService;
+        this.bookRegisterMapper = bookRegisterMapper;
     }
 
     @GetMapping(value = "/all")
@@ -63,12 +72,27 @@ public class BookController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    /*@PatchMapping(value = "/update", produces = "application/json")
+    @PatchMapping(value = "/update", produces = "application/json")
     public ResponseEntity<BookDto> updateBook(@RequestBody BookDto bookDto) {
-        BookDto bookUpdated = bookService.updateBook(bookDto);
+        BookDto bookUpdated = bookService.createBook(bookDto);
         return new ResponseEntity<>(bookUpdated, HttpStatus.OK);
-    }*/
-    @PatchMapping(value = "/update", produces = "application/json", consumes = "application/json")
+    }
+
+    @PostMapping(value = "/rent", produces = "application/json")
+    public ResponseEntity<BookRegisterDto> rentBook(@RequestParam String username, @RequestParam Long bookId,
+                                                    @RequestParam Date datePickUp, @RequestParam Date returnDate) {
+        BookRegister bookRegister = rentalRequestService.rentBook(username, bookId, datePickUp, returnDate);
+        BookRegisterDto bookRegisterDto = bookRegisterMapper.toDto(bookRegister); // Assuming bookRegisterMapper is defined
+        return new ResponseEntity<>(bookRegisterDto, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/user/{username}/totalRentalDays")
+    public ResponseEntity<Integer> getTotalRentalDays(@PathVariable String username) {
+        int totalRentalDays = rentalRequestService.getTotalRentalDays(username);
+        return ResponseEntity.ok(totalRentalDays);
+    }
+
+    /*@PatchMapping(value = "/update", produces = "application/json", consumes = "application/json")
     public ResponseEntity<BookDto> updateBook( @RequestBody BookDto bookDto) {
         try {
             BookDto updatedBook = bookService.updateBook(bookDto);
@@ -78,5 +102,5 @@ public class BookController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-    }
+    }*/
 }

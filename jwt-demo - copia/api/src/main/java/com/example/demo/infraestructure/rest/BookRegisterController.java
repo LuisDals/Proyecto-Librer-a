@@ -22,10 +22,13 @@ public class BookRegisterController {
         return this.bookRegisterService.getItems(pageable);
     }
 
-    @GetMapping({"/book-registers/{userId}"})
-    public ResponseEntity<Page<BookRegisterDto>> getPlayRegistersByUserId(@PathVariable String userId, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "2147483647") int size) {
+    @GetMapping("/book-registers/{userId}")
+    public ResponseEntity<Page<BookRegisterDto>> getBookRegistersByUserId(
+            @PathVariable String userId,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<BookRegisterDto> playRegistersPage = this.bookRegisterService.getBookRegisterByUserId(userId, pageable);
-        return ResponseEntity.ok(playRegistersPage);
+        Page<BookRegisterDto> bookRegistersPage = bookRegisterService.getBookRegisterByUserId(userId, pageable);
+        return ResponseEntity.ok(bookRegistersPage);
     }
 }

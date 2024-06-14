@@ -1,10 +1,10 @@
 
 œ
-java:S1488?"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂJ$19a017e7-c200-48e4-8317-a2a647bb0b75
+java:S1488?"`Immediately return this expression instead of assigning it to the temporary variable "userDtos".(®ÁˆÂJ$72cc61ca-e0a7-428f-9b4a-c1771cc9db9c
 h
-java:S1905,"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿJ$e9996b18-ff84-4f32-8df8-a4bfa6565593
+java:S1905,"'Remove this unnecessary cast to "User".(Ì†æÕøÿÿÿÿJ$669e34e9-5797-4a2d-996a-20b88fbdbc0e
 f
-java:S1905."*Remove this unnecessary cast to "UserDto".(øö¶ŽJ$551be6f7-ec23-4d89-b9b9-2ae49d7a247c
-v	java:S1255"<This block of commented-out lines of code should be removed.(ø«œ+J$5a05ac0e-8115-4ffa-934d-7e2651153ec3
+java:S1905."*Remove this unnecessary cast to "UserDto".(øö¶ŽJ$ab3577f2-3345-4c4c-ab99-0bf8aa13ec9a
+v	java:S1255"<This block of commented-out lines of code should be removed.(ø«œ+J$3f06c673-9f53-4acd-9c5a-45c725b38d90
 ¶
-java:S6204A"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$1939fb87-d9b7-44fa-95cd-d6caea120bae
+java:S6204A"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$f1c27cb7-2081-49be-9ee4-58ae6fc6f9bc
