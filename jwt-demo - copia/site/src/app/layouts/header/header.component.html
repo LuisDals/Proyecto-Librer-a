@@ -4,7 +4,7 @@
             <h1>Welcome {{user?.username}}</h1>
         </div>
         <div class="navbar-text mx-auto">
-            <h1 [routerLink]="['/homepage']">GrooveGarden</h1>
+            <h1 (click)="goToHomePage()">GrooveGarden</h1>
         </div>
         <div class="navbar-text ml-auto" *ngIf="Token()">
             <p class="mr-2">{{user?.firstName}} {{user?.lastName}}</p> 

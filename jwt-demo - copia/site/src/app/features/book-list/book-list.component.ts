@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import jsPDF from 'jspdf';
 import { Book } from 'src/app/auth/model/book.model';
 import { Users } from 'src/app/auth/model/user.model';
@@ -27,7 +27,7 @@ export class BookListComponent implements OnInit{
   totalPages: number = 0;
   totalElements: number = 0;
 
-  constructor(private bookService: BookService, private route: ActivatedRoute, private authService: AuthService, private http: HttpClient) { }
+  constructor(private bookService: BookService, private route: ActivatedRoute, private authService: AuthService, private http: HttpClient, private router: Router) { }
   ngOnInit(): void {
     this.getAllBooksPaged();
     this.route.queryParamMap.subscribe(params => {
@@ -87,5 +87,10 @@ export class BookListComponent implements OnInit{
   previousPage() {
     this.page = this.page - 1;
     this.getAllBooksPaged();
+  }
+
+  goToBookDetail(bookId: number){
+    const user = this.username;
+    this.router.navigate(['/bookDetail', bookId], { queryParams:{ user }});
   }
 }

@@ -84,4 +84,8 @@ export class HeaderComponent implements OnInit{
       return this.hasToken = false;
     }
   }
+
+  goToHomePage(): void {
+    this.router.navigate(['/homepage'], { queryParams: { user: this.username } });
+  }
 }

@@ -53,15 +53,11 @@ export class BookService {
 
   public updateBook(book: Book): Observable<Book>{
     const urlEndpoint: string = `http://localhost:8080/auth/books/update`;
-    /* const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }); */
     return this.http.patch<Book>(urlEndpoint, book);
   }
 
   public deleteBook(bookId: number): Observable<void>{
     const urlEndpoint: string =  "http://localhost:8080/auth/books/delete/" + bookId;
-    return this.http.delete<void>(urlEndpoint + bookId);
+    return this.http.delete<void>(urlEndpoint);
   }
 }

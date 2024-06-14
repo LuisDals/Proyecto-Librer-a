@@ -26,7 +26,7 @@ public class Book {
     private BigDecimal rentPrice;
     @Column(name = "sale_price")
     private BigDecimal salePrice;
-    @Column(name = "available", nullable = false)
+    @Column(name = "available")
     private boolean available;
     @OneToMany(mappedBy = "book",  cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookRegister> registers;

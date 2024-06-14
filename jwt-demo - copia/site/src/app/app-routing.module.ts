@@ -10,6 +10,7 @@ import { BookDetailsComponent } from './features/book-details/book-details.compo
 import { BookListComponent } from './features/book-list/book-list.component';
 import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
 import { BookCreationComponent } from './features/book-creation/book-creation.component';
+import { UpdateBookComponent } from './features/book-details/update-book/update-book.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'bookDetail/:bookId', component: BookDetailsComponent},
   { path: 'bookList', component: BookListComponent}, 
   { path: 'user-profile/:username', component: UserProfileComponent},
-  { path: 'createBook', component: BookCreationComponent}
+  { path: 'createBook', component: BookCreationComponent},
+  { path: 'bookUpdate/:bookId', component: UpdateBookComponent}
+  
 ];
 
 @NgModule({

@@ -1,7 +1,11 @@
 
  
-java:S3655'"XCall "optionalBook.isPresent()" or "!optionalBook.isEmpty()" before accessing the value.(¯êµ­üÿÿÿÿ8¥›ˆŸ2J$24bf96e9-2e19-4837-8a41-389bcb372067
+java:S3655'"XCall "optionalBook.isPresent()" or "!optionalBook.isEmpty()" before accessing the value.(¯êµ­üÿÿÿÿ8¥›ˆŸ2J$6c21fc11-b03b-4d7a-9cab-1f3a559a5c8a
 j
-java:S1905B"'Remove this unnecessary cast to "Book".(ğ¨†Ô8«›ˆŸ2J$2decfb38-9514-49b0-8a1a-d4b88ab5b36b
+java:S1905B"'Remove this unnecessary cast to "Book".(ğ¨†Ô8«›ˆŸ2J$99c4588b-fda5-4e23-8f68-b87bfa75b551
 r
-java:S1905D"*Remove this unnecessary cast to "BookDto".(Ş›¢ñÿÿÿÿÿ8«›ˆŸ2J$445a13de-c7fb-4fbb-87fc-1a56a50a9281
+java:S1905D"*Remove this unnecessary cast to "BookDto".(Ş›¢ñÿÿÿÿÿ8«›ˆŸ2J$6a7a1b3a-28d6-4be1-abc6-8b483c7fdc67
+ˆ
+java:S1128"ERemove this unused import 'com.example.demo.application.dto.UserDto'.(¡‚çï8”ßà¯2J$2aff9f8d-c741-444f-81b9-25e588d35df8
+ƒ
+java:S1128"@Remove this unused import 'com.example.demo.domain.entity.User'.(ê‚Ê—8”ßà¯2J$abdf41d9-80e5-47cb-b49c-923f5c226503

@@ -19,6 +19,7 @@ export class BookCreationComponent{
     available: false
   };
 
+
   constructor(private bookService: BookService, private router: Router){
 
   }
@@ -28,7 +29,7 @@ export class BookCreationComponent{
     this.bookService.createBook(this.book).subscribe({
       next: () => {
         alert('Book created successfully');
-        this.router.navigate(['/books']);
+        /* this.router.navigate(['/bookList']); */
       },
       error: (err) => {
         console.error('Error creating book:', err);

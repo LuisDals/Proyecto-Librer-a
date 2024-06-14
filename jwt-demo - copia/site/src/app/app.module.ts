@@ -18,6 +18,7 @@ import { BookListComponent } from './features/book-list/book-list.component';
 import { BookDetailsComponent } from './features/book-details/book-details.component';
 import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
 import { BookCreationComponent } from './features/book-creation/book-creation.component';
+import { UpdateBookComponent } from './features/book-details/update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { BookCreationComponent } from './features/book-creation/book-creation.co
     BookListComponent,
     BookDetailsComponent,
     UserProfileComponent,
-    BookCreationComponent
+    BookCreationComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,8 @@
         {{book.genre}}
         {{book.rentPrice}}
         {{book.salePrice}}
-        <a [routerLink]="['/bookDetail/' + book.id]" class="btn btn-primary">Ver detalles</a>
+        <!-- <a [routerLink]="['/bookDetail/' + book.id]" class="btn btn-primary">Ver detalles</a> -->
+        <a (click)="goToBookDetail(book.id!)" class="btn btn-primary">Ver detalles</a>
     </div>
     <div class="botoneraPaginacion table-container">
         <button [disabled]="first" class="btn btn-secondary btnAtras btnUno" (click)="previousPage()">Anterior</button>
