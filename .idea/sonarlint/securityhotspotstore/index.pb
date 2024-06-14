@@ -65,3 +65,9 @@ Njwt-demo - copia/api/src/main/java/com/example/demo/config/SecurityConfig.java
 Xjwt-demo - copia/api/src/main/java/com/example/demo/application/service/UserService.java,8\f\8fe78123b4ae25037274976df58a2b2f4b0931ef
 à
 Xjwt-demo - copia/api/src/main/java/com/example/demo/application/service/BookService.java,c\0\c01ed0fd93703afe24a537e3a5a8a7f82cfd14fa
+ë
+ajwt-demo - copia/api/src/main/java/com/example/demo/application/service/impl/AuthServiceImpl.java,4\d\4da419115c4f81344d1944472f096c000577b2ec
+à
+Xjwt-demo - copia/api/src/main/java/com/example/demo/application/service/AuthService.java,2\1\21e6e90228c073fca57ec4e91387c9842a1f1265
+ê
+`jwt-demo - copia/api/src/main/java/com/example/demo/application/service/BookRegisterService.java,7\5\7591a75f728307ddb8b13da42e74fed64e1d39f6
