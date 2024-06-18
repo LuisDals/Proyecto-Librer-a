@@ -1,37 +1,65 @@
 <div class="container mt-4">
-    <!-- Botón para crear libro (solo visible para usuarios ADMIN) -->
-    <div class="btn mb-3" *ngIf="user?.role === 'ADMIN'">
-        <a [routerLink]="['/createBook']" class="btn btn-primary">Create book</a>
+    <!-- Fila para botones de administración y perfil -->
+    <div class="row justify-content-start">
+      <!-- Botón para crear libro (solo visible para usuarios ADMIN) -->
+      <div class="col-lg-3 mb-3" *ngIf="user?.role === 'ADMIN'">
+        <a [routerLink]="['/createBook']" class="btn btn-primary btn-block">Create book</a>
+      </div>
+      <!-- Botón de perfil -->
+      <div class="col-lg-3 mb-3">
+        <a class="btn btn-primary btn-block" [routerLink]="['/user-profile/', user?.username]">Profile</a>
+      </div>
     </div>
-
+  
     <!-- Contenedor principal de la lista de libros y paginación -->
     <div id="bookList">
-        <!-- Lista de libros -->
-        <div class="row justify-content-center">
-            <div class="col-md-4 mb-4" *ngFor="let book of bookList">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ book.bookName }}</h5>
-                        <p class="card-text">Publication Date: {{ book.publicationDate }}</p>
-                        <p class="card-text">Author: {{ book.author }}</p>
-                        <p class="card-text">Genre: {{ book.genre }}</p>
-                        <a (click)="goToBookDetail(book.id!)" class="btn btn-primary">Ver detalles</a>
-                    </div>
-                </div>
+      <!-- <div class="row justify-content-center">
+        <div class="col-md-4 mb-4" *ngFor="let book of bookList">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.bookName }}</h5>
+              <p>
+                <img src="img" class="img-fluid book-image" [src]="'data:image/jpeg;base64,' + book.image">
+              </p>
+              <p class="card-text">Publication Date: {{ book.publicationDate }}</p>
+              <p class="card-text">Author: {{ book.author }}</p>
+              <p class="card-text">Genre: {{ book.genre }}</p>
+              <a (click)="goToBookDetail(book.id!)" class="btn btn-primary">Ver detalles</a>
             </div>
+          </div>
         </div>
-
-        <!-- Botonera de paginación centrada -->
-        <div class="botoneraPaginacion table-container mt-4 text-center">
-            <button [disabled]="first" class="btn btn-secondary btnAtras btnUno" (click)="previousPage()">Anterior</button>
-            <span class="mx-3">Página {{ page + 1 }} de {{ totalPages }} - Elementos totales: {{ totalElements }}</span>
-            <button [disabled]="last" class="btn btn-secondary btnAtras btnUno" (click)="nextPage()">Siguiente</button>
+      </div> -->
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4" *ngFor="let book of bookList">
+          <div class="card fixed-size-card">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ book.bookName }}</h5>
+              <div class="img-container flex-grow-1">
+                <img class="img-fluid book-image" [src]="'data:image/jpeg;base64,' + book.image">
+              </div>
+              <p class="card-text">Publication Date: {{ book.publicationDate }}</p>
+              <p class="card-text">Author: {{ book.author }}</p>
+              <p class="card-text">Genre: {{ book.genre }}</p>
+              <div class="mt-auto">
+                <a (click)="goToBookDetail(book.id!)" class="btn btn-primary">Ver detalles</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      
+      
+      <!-- Botonera de paginación centrada -->
+      <div class="botoneraPaginacion table-container mt-4 text-center">
+        <button [disabled]="first" class="btn btn-secondary btnAtras btnUno" (click)="previousPage()">Anterior</button>
+        <span class="mx-3">Página {{ page + 1 }} de {{ totalPages }} - Elementos totales: {{ totalElements }}</span>
+        <button [disabled]="last" class="btn btn-secondary btnAtras btnUno" (click)="nextPage()">Siguiente</button>
+      </div>
     </div>
-
+  
     <!-- Botón para imprimir pdf (alineado a la derecha y abajo) -->
     <div class="text-right mt-4">
-        <button type="button" class="btn btn-primary btn-md" (click)="printBookList()">Imprimir pdf</button>
+      <button type="button" class="btn btn-primary btn-md" (click)="printBookList()">Imprimir pdf</button>
     </div>
-</div>
-
+  </div>
+  

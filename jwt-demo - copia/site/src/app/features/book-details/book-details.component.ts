@@ -57,7 +57,6 @@ export class BookDetailsComponent implements OnInit {
       this.bookService.deleteBook(this.bookId).subscribe({
         next: () => {
           alert('Book deleted successfully');
-          this.router.navigate(['/bookList']);
         },
         error: (err) => console.error('Error deleting book:', err)
       });
@@ -78,12 +77,11 @@ export class BookDetailsComponent implements OnInit {
     if (this.isAuthenticated && this.user) {
       const today = new Date();
       const returnDate = new Date();
-      returnDate.setDate(today.getDate() + 7); // Ejemplo: devolución en una semana
+      returnDate.setDate(today.getDate() + 7);
 
       this.rentalService.rentBook(this.username, this.bookId, today, returnDate).subscribe({
         next: (rental) => {
           alert(`Book rented successfully. Return by: ${returnDate.toLocaleDateString()}`);
-          // Puedes hacer algo después de alquilar el libro, como redirigir o actualizar los datos
         },
         error: (err) => console.error('Error renting book:', err)
       });

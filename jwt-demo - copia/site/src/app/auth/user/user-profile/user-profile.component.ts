@@ -15,7 +15,7 @@ export class UserProfileComponent {
   hasToken: boolean = false;
   username: string = '';
   isAuthenticated = false;
-  user?: Users; 
+  user?: Users;
   users: Users[] = [];
   token: string = '';
   rentals: BookRegister[] = [];
@@ -24,7 +24,7 @@ export class UserProfileComponent {
   constructor(private router: Router, private authService: AuthService, private route: ActivatedRoute, private http: HttpClient, private rentalService: RentalService) { }
 
   ngOnInit(): void {
-    this.username = this.route.snapshot.params['username']; 
+    this.username = this.route.snapshot.params['username'];
     console.log(this.username);
     this.loadUserProfile();
     this.loadUsersProfiles();
@@ -50,7 +50,7 @@ export class UserProfileComponent {
   }
 
   loadUsersProfiles() {
-    if (this.token) { 
+    if (this.token) {
       this.isAuthenticated = true;
       this.http.get<Users[]>(`http://localhost:8080/api/v1/user/all`, {
         headers: { Authorization: `Bearer ${this.token}` }
@@ -65,7 +65,7 @@ export class UserProfileComponent {
       });
     }
   }
-  
+
 
   goToLogin() {
     this.router.navigate(['/login']);
@@ -80,26 +80,29 @@ export class UserProfileComponent {
     return this.authService.getToken() ? true : false;
   }
 
-  deleteAccount() {
+  deleteAccount(username: string, role: string) {
     const token = this.authService.getToken();
-    if(token) {
+    if (token) {
       this.isAuthenticated = true;
-      this.http.delete(`http://localhost:8080/api/v1/user/${this.username}`, {
-        headers: { Authorization: `Bearer ${token}`}
+      this.http.delete(`http://localhost:8080/api/v1/user/${username}`, {
+        headers: { Authorization: `Bearer ${token}` }
       }).subscribe({
         next: () => {
           alert("User delete succesfully");
-          this.authService.logout();
-          this.router.navigate(['/login']);
+          if (role === 'USER') {
+            this.authService.logout();
+            this.router.navigate(['/login']);
+          }
+          this.loadUsersProfiles();
         }
       })
     }
   }
 
 
-  confirmDelete(){
+  confirmDelete(username: string, role: string) {
     if (window.confirm('Are you sure you want to delete your account?')) {
-      this.deleteAccount();
+      this.deleteAccount(username, role);
     }
   }
 
@@ -114,41 +117,41 @@ export class UserProfileComponent {
       }
     );
   } */
-  
-    /* loadRentals() {
-      this.rentalService.getRentalsByUsername(this.username).subscribe(
-        (rentals: BookRegister[]) => {
-          console.log("Alquileres", rentals);
-          this.rentals = rentals;
-        },
-        (error) => {
-          console.error('Error al cargar los alquileres:', error);
-        }
-      );
-    } */
+
+  /* loadRentals() {
+    this.rentalService.getRentalsByUsername(this.username).subscribe(
+      (rentals: BookRegister[]) => {
+        console.log("Alquileres", rentals);
+        this.rentals = rentals;
+      },
+      (error) => {
+        console.error('Error al cargar los alquileres:', error);
+      }
+    );
+  } */
 
 
-    loadRentals(){
-      this.rentalService.getRentalsByUsername(this.username).subscribe({
-        next: (data: any) => {
-          this.rentals = data.content;
-        }
-      })
-    }
-    /* getAllBooksPaged(){
-      this.bookService.getAllBooksPaged(this.page, this.size, this.sort).subscribe({
-        next: (data: any) => {
-          this.bookList = data.content;
-          this.first = data.first;
-            this.last = data.last;
-            this.totalPages = data.totalPages;
-            this.totalElements = data.totalElements;
-          console.log("Objeto", data.content);
-        }, 
-        error: (error) => {
-          console.log("Ha ocurrido un error en la llamada de las canciones " + error);
-        }
-      });
-    } */
+  loadRentals() {
+    this.rentalService.getRentalsByUsername(this.username).subscribe({
+      next: (data: any) => {
+        this.rentals = data.content;
+      }
+    })
+  }
+  /* getAllBooksPaged(){
+    this.bookService.getAllBooksPaged(this.page, this.size, this.sort).subscribe({
+      next: (data: any) => {
+        this.bookList = data.content;
+        this.first = data.first;
+          this.last = data.last;
+          this.totalPages = data.totalPages;
+          this.totalElements = data.totalElements;
+        console.log("Objeto", data.content);
+      }, 
+      error: (error) => {
+        console.log("Ha ocurrido un error en la llamada de las canciones " + error);
+      }
+    });
+  } */
 
 }

@@ -20,7 +20,7 @@ public class User {
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<BookRegister> registers;
     @Column(name = "total_rental_days")
     private int totalRentalDays;

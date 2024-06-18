@@ -1,32 +1,4 @@
-<!-- <h2>Create New Book</h2>
-<form (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="bookname">Book Name</label>
-    <input type="text" class="form-control" id="bookname" name="bookname" [(ngModel)]="book.bookName" placeholder="Enter book name" required>
-  </div>
-  <div class="form-group">
-    <label for="author">Author</label>
-    <input type="text" class="form-control" id="author" name="author" [(ngModel)]="book.author" placeholder="Enter author name" required>
-  </div>
-  <div class="form-group">
-    <label for="genre">Genre</label>
-    <input type="text" class="form-control" id="genre" name="genre" [(ngModel)]="book.genre" placeholder="Enter genre" required>
-  </div>
-  <div class="form-group">
-    <label for="description">Publication date</label>
-    <textarea class="form-control" id="description" name="description" [(ngModel)]="book.publicationDate" placeholder="Enter description" required></textarea>
-  </div>
-  <div class="form-group">
-    <label for="available">Available</label>
-    <select class="form-control" id="available" [(ngModel)]="book.available">
-        <option [ngValue]="true">True</option>
-        <option [ngValue]="false">False</option>
-    </select>
-</div>
-  <button type="submit" class="btn btn-primary">Create Book</button>
-</form>
- -->
- <div class="container mt-5">
+<div class="container mt-5">
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="card">
@@ -39,6 +11,10 @@
                           <label for="bookname">Book Name</label>
                           <input type="text" class="form-control" id="bookname" name="bookname" [(ngModel)]="book.bookName" placeholder="Enter book name" required>
                       </div>
+                      <div class="form-group">
+                        <label for="bookname">Book Image</label>
+                        <input type="text" class="form-control" id="bookname" name="bookname" [(ngModel)]="book.image" placeholder="Enter book image" required>
+                    </div>
                       <div class="form-group">
                           <label for="author">Author</label>
                           <input type="text" class="form-control" id="author" name="author" [(ngModel)]="book.author" placeholder="Enter author name" required>

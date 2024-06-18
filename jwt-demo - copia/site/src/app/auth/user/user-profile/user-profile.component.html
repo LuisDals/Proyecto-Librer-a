@@ -27,7 +27,7 @@
               <label for="role">Role</label>
               <input type="role" class="form-control" id="role" value="{{user?.role}}" disabled>
             </div>
-            <button id="deleteBoton" type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete Account</button>
+            <button id="deleteBoton" type="button" class="btn btn-danger btn-block" (click)="confirmDelete(user?.username!, user?.role!)">Delete Account</button>
           </form>
         </div>
       </div>
@@ -87,7 +87,7 @@
           <strong>Role:</strong> {{usuario?.role}}
       </div>
       <div class="col-12 col-md-2 text-md-left text-lg-right mt-2 mt-md-0">
-          <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete()">Delete Account</button>
+          <button type="button" class="btn btn-danger btn-block" (click)="confirmDelete(usuario?.username!, user?.role!)">Delete Account</button>
       </div>
       <div class="col-12">
           <hr>
