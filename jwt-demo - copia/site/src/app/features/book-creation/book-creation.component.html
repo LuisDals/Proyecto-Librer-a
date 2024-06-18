@@ -28,6 +28,10 @@
                           <input type="date" class="form-control" id="publicationDate" name="publicationDate" [(ngModel)]="book.publicationDate" required>
                       </div>
                       <div class="form-group">
+                        <label for="rentBook">Rent price</label>
+                        <input type="number" class="form-control" id="rentBook" [(ngModel)]="book.rentPrice">
+                    </div>
+                      <div class="form-group">
                           <label for="available">Available</label>
                           <select class="form-control" id="available" name="available" [(ngModel)]="book.available" required>
                               <option [ngValue]="true">True</option>
